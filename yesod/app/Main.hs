@@ -20,8 +20,7 @@ fib 1 = 1
 fib n = fib (n-1) + fib (n-2)
 
 getHomeR :: Handler Html
-getHomeR = pure . toHtml . T.pack . show . fib $ 40
--- defaultLayout [whamlet|Hello World!|]
+getHomeR = defaultLayout [whamlet|#{show (fib 40)}|]
 
 main :: IO ()
 main = warp 3000 Fib
