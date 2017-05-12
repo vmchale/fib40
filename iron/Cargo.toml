@@ -1,0 +1,8 @@
+[package]
+name = "iron-fib40"
+version = "0.1.0"
+authors = ["Vanessa McHale <vamchale@gmail.com>"]
+
+[dependencies]
+iron = "0.5"
+time = "0.1"
