@@ -18,10 +18,10 @@ Results on my computer
 
 | Framework | Language | Time |
 | --------- | -------- | ---- |
-| Flask | Python | 
-| Iron | Rust | 646 ms |
+| Flask | python | 1095s |
+| Iron | rust | 646 ms |
 | node.js | JavaScript | 11.1s | 
-| stdlib | Python | 
-| rails | Ruby | 
-| spock | Haskell | 
-| yesod | Haskell | 
+| stdlib | python | 560s |
+| rails | Ruby | 165s |
+| spock | Haskell | 1.37ms | 
+| yesod | Haskell | 1.46ms |
