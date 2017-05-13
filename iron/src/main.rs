@@ -1,18 +1,31 @@
+#[macro_use] extern crate cached;
+#[macro_use] extern crate lazy_static;
+
 extern crate iron;
 extern crate time;
 
+use cached::SizedCache;
 use iron::prelude::*;
 
-fn fib(n: i32) -> i32 {
+cached!{ SLOW: SizedCache = SizedCache::with_capacity(50); >>
+fn fib_memo(n: i32) -> i32 = {
     match n {
         0 => 1,
         1 => 1,
-        n => fib (n-1) + fib (n-2),
+        n => fib_memo (n-1) + fib_memo (n-2),
+    }
+}}
+
+fn fib_naive(n: i32) -> i32 {
+    match n {
+        0 => 1,
+        1 => 1,
+        n => fib_naive (n-1) + fib_naive (n-2),
     }
 }
 
 fn fib_bench(_: &mut Request) -> IronResult<Response> {
-    Ok(Response::with((iron::status::Ok, fib(40).to_string())))
+    Ok(Response::with((iron::status::Ok, fib_naive(40).to_string())))
 }
 
 fn main() {

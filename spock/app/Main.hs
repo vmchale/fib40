@@ -19,7 +19,7 @@ main :: IO ()
 main =
     do ref <- newIORef 0
        spockCfg <- defaultSpockCfg EmptySession PCNoDatabase (DummyAppState ref)
-       runSpock 8080 (spock spockCfg app)
+       runSpock 3000 (spock spockCfg app)
 
 app :: SpockM () MySession MyAppState ()
 app =

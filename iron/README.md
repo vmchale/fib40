@@ -5,6 +5,5 @@
 Install [cargo](https://rustup.rs/). Then:
 
 ```bash
-cargo build --release
-./target/release/iron-fib40
+cargo run --release
 ```

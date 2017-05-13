@@ -1,15 +1,27 @@
 # fib40 benchmarks
 
 This is a replication of the infamous fib40 benchmarks of node.js. Basically, it
-shows that many popular libraries & languages don't have memoization (bad!).
+showcases the memoization & parallelism that each of the languages have.
 
 ## Use
 
 First install `weighttp` from your package manager. Then, the following command
-will benchmark whichever server you have running:
+will benchmark a server:
 
 ```bash
-weighttp -n32 -n8 -c8
+weighttp -n8 -t8 -c8 # 8 requests with 8 cores
 ```
 
-This might take awhile for some of the python ones especially.
+## Results
+
+Results on my computer
+
+| Framework | Language | Time |
+| --------- | -------- | ---- |
+| Flask | Python | 
+| Iron | Rust | 646 ms |
+| node.js | JavaScript | 11.1s | 
+| stdlib | Python | 
+| rails | Ruby | 
+| spock | Haskell | 
+| yesod | Haskell | 
